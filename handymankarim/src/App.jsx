@@ -1,6 +1,7 @@
 import "./App.css";
 import { HelmetProvider } from 'react-helmet-async';
 import SEO from './components/SEO';
+import Gallery from "./components/Gallery";
 
 function App() {
   return (
@@ -35,26 +36,27 @@ function App() {
               English, Spanish, French, Italian and Arabic Fluently.
             </p>
             <p className="hero-description">
-              Your trusted solution for all home repair and improvement needs. We
+              Your trusted solution and your <p style={{fontWeight:"bold", color:"black", fontStyle:"italic"}} >go-to</p> for all home repair and improvement needs. We
               provide professional, reliable, and efficient services tailored to
               your requirements.
             </p>
             {/* <button className="cta-button">Get a Quote</button> */}
           </div>
         </header>
-
         {/* About Section */}
         <section className="about">
           <div className="container">
             <h2>About Us</h2>
             <p>
-              At HandyMan Karim, we specialize in making your life easier. From
+              With 20+ Years of experience at HandyMan Karim, we specialize in making your life easier. From
               plumbing to electrical work, carpentry to painting, our skilled
               professionals are equipped to handle all your home repair and
               maintenance needs. Customer satisfaction is our top priority, and we
               ensure every job is done to the highest standards.
             </p>
           </div>
+          <p style={{textAlign:"center", fontWeight:"bold"}} >Quick look at our work</p>
+        <Gallery/>
         </section>
 
         {/* Services Section */}
@@ -112,6 +114,7 @@ function App() {
               &copy; {new Date().getFullYear()} HandyMan Karim. All rights
               reserved.
             </p>
+            
           </div>
         </footer>
       </div>

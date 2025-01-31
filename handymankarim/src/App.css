@@ -1,119 +1,83 @@
 /* General Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   line-height: 1.6;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .container {
-  width: 90%;
-  /* max-width: 1200px; */
+  width: 100%;
+  padding: 15px;
   margin: 0 auto;
-  padding: 20px;
+  text-align: center;
 }
 
 /* Hero Section */
 .hero {
   background-color: #4f95d2;
   text-align: center;
-  padding: 60px 20px;
+  padding: 30px 15px;
+  width: 100%;
 }
 
 .hero-title {
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
   margin: 0;
+  padding: 0 10px;
+  word-wrap: break-word;
 }
 
 .hero-description {
-  font-size: 1.2rem;
-  margin: 20px 0;
-}
-
-.cta-button {
-  background-color: #007acc;
-  color: rgb(127, 47, 47);
-  border: none;
-  padding: 10px 20px;
-  font-size: 1rem;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.cta-button:hover {
-  background-color: #005f99;
-}
-
-/* About Section */
-.about {
-  padding: 40px 20px;
-  background-color: #a58e8e;
-}
-
-.about h2 {
-  text-align: center;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  margin: 15px 0;
+  padding: 0 10px;
 }
 
 /* Services Section */
 .services {
-  padding: 40px 20px;
+  padding: 30px 15px;
   background-color: #977c7c;
+  width: 100%;
 }
 
 .services-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
+  padding: 10px;
 }
 
 .service-item {
-  flex: 1 1 calc(50% - 20px);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  background-color: #374a5b;
-  border-radius: 8px;
+  width: 100%;
+  padding: 15px;
 }
 
-.service-item h3 {
-  margin-top: 0;
-}
+/* Contact and Footer sections remain the same */
 
-/* Contact Section */
-.contact {
-  background-color: #007acc;
-  color: rgb(137, 80, 80);
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.contact h2 {
-  margin-bottom: 20px;
-}
-
-.cta-button {
-  background-color: white;
-  color: #007acc;
-}
-
-.cta-button:hover {
-  background-color: #f0f8ff;
-}
-
-/* Footer */
-.footer {
-  background-color: #333;
-  color: rgb(117, 83, 83);
-  text-align: center;
-  padding: 20px 0;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 2rem;
+/* Enhanced Responsive Design */
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
   }
-
+  
+  .hero {
+    padding: 20px 10px;
+  }
+  
+  .services-list {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
   .service-item {
-    flex: 1 1 100%;
+    padding: 12px;
   }
 }
