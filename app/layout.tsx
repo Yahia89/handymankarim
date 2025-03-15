@@ -1,7 +1,7 @@
 
+import './globals.css'
 import { Metadata } from 'next'
 import Navigation from '../components/Navigation'
-import './globals.css'
 import ScrollToTop from '../components/ScrollToTop'
 import Script from 'next/script'
 
