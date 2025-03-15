@@ -8,37 +8,37 @@ const services = [
     title: "ADU Construction",
     description:
       "Specialized in building Accessory Dwelling Units (ADUs). Create additional living space with custom designs that match your property.",
-    image: "/handymankarim/images/services/ADU.jpg", // Updated path
+    image: "/images/services/ADU.jpg", // Updated path
   },
   {
     title: "Plumbing Services",
     description:
       "Comprehensive plumbing solutions for repairs, installations, and maintenance. From fixing leaks to complete bathroom renovations.",
-    image: "/handymankarim/images/services/plumbing.jpg",
+    image: "/images/services/plumbing.jpg",
   },
   {
     title: "Roofing Services",
     description:
       "Expert roofing solutions including repairs, replacements, and maintenance. We handle all types of roofs with quality materials and professional installation.",
-    image: "/handymankarim/images/services/roofing.jpg",
+    image: "/images/services/roofing.jpg",
   },
   {
     title: "Remodeling & Construction",
     description:
       "Complete home remodeling services, from kitchen and bathroom renovations to whole-house transformations. Quality craftsmanship for your dream space.",
-    image: "/handymankarim/images/services/remodeling.jpg",
+    image: "/images/services/remodeling.jpg",
   },
   {
     title: "Painting & Drywall",
     description:
       "Professional interior and exterior painting services, drywall installation, repair, and finishing. Transform your space with expert color solutions, as well as plastering services.",
-    image: "/handymankarim/images/services/painting.jpg",
+    image: "/images/services/painting.jpg",
   },
   {
     title: "Flooring & Tile Services",
     description:
       "Expert installation and repair of hardwood, laminate, tile, and stone flooring. Professional tile work for bathrooms, kitchens, and custom designs. Quality materials and craftsmanship for lasting beauty in your home.",
-    image: "/handymankarim/images/services/flooring.jpg",
+    image: "/images/services/flooring.jpg",
   },
   // Add more services as needed
 ];

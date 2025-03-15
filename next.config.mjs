@@ -7,9 +7,9 @@ const nextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
-  // Remove basePath since we're using a custom domain
-  // Add assetPrefix for production assets
-  assetPrefix: process.env.NODE_ENV === 'production' ? 'https://handymankarim.com' : '',
+  // Remove GitHub Pages specific configuration
+  assetPrefix: '',
+  basePath: '',
 };
 
 export default nextConfig;
