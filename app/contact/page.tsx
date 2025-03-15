@@ -8,11 +8,11 @@ export default function Contact() {
     message: ''
   });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Add your form submission logic here
-    console.log('Form submitted:', formData);
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   // Add your form submission logic here
+  //   console.log('Form submitted:', formData);
+  // };
 
   return (
     <main className="max-w-7xl mx-auto px-4 py-12">
