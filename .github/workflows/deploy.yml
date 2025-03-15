@@ -37,8 +37,9 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.6.0
         with:
-          branch: gh-pages       # Deploys to gh-pages branch
-          folder: out           # Includes the .nojekyll file
+          branch: gh-pages
+          folder: out
           clean: true
           clean-exclude: |
             .nojekyll
+            CNAME
