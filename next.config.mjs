@@ -7,9 +7,10 @@ const nextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
-  // Remove GitHub Pages specific configuration
+  // Remove all GitHub Pages specific paths
   assetPrefix: '',
   basePath: '',
+  distDir: 'out',
 };
 
 export default nextConfig;
