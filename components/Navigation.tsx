@@ -38,7 +38,7 @@ export default function Navigation() {
           <div className="hidden md:flex md:items-center md:space-x-8">
             <Link href="/" className="text-gray-700 hover:text-blue-900">Home</Link>
             <Link href="/gallery" className="text-gray-700 hover:text-blue-900">My Work</Link>
-            <Link href="/contact" className="text-gray-700 hover:text-blue-900">Let's Talk</Link>
+            <Link href="/contact" className="text-gray-700 hover:text-blue-900">Let&apos;s Talk</Link>
           </div>
         </div>
       </div>
@@ -60,7 +60,7 @@ export default function Navigation() {
             <Link href="/contact"
                   className="block px-3 py-2 text-gray-700 hover:text-blue-900 hover:bg-gray-50 rounded-md"
                   onClick={() => setIsOpen(false)}>
-              Let's Talk
+              Let&apos;s Talk
             </Link>
           </div>
         </div>
