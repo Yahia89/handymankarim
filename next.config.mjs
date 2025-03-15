@@ -7,8 +7,8 @@ const nextConfig = {
     unoptimized: true, // Necessary for static exports
   },
   trailingSlash: true, // Adds trailing slashes to page URLs (optional, but keep as is)
-  basePath: '/', // Serve from the root of the domain
-  assetPrefix: '/', // Ensure assets are prefixed correctly from the root
+  basePath: '', // Serve from the root of the domain (corrected)
+  // assetPrefix: '/', // Removed (see explanation below)
   distDir: 'out', // Output directory for static files
 };
 
