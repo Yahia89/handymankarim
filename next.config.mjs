@@ -2,14 +2,13 @@
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
-  output: 'export', // Required for static export to GitHub Pages
+  output: 'export',
   images: {
-    unoptimized: true, // Necessary for static exports
+    unoptimized: true,
   },
-  trailingSlash: true, // Adds trailing slashes to page URLs (optional, but keep as is)
-  basePath: '', // Serve from the root of the domain (corrected)
-  // assetPrefix: '/', // Removed (see explanation below)
-  distDir: 'out', // Output directory for static files
+  trailingSlash: true,
+  // Remove basePath completely
+  assetPrefix: '',
 };
 
 export default nextConfig;
