@@ -7,7 +7,9 @@ const nextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/' : '',
+  // Remove basePath since we're using a custom domain
+  // Add assetPrefix for production assets
+  assetPrefix: process.env.NODE_ENV === 'production' ? 'https://handymankarim.com' : '',
 };
 
 export default nextConfig;
