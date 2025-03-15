@@ -39,7 +39,7 @@ export default function Contact() {
           </div>
           <div>
             <h2 className="text-2xl font-semibold mb-4">Get in Touch</h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form className="space-y-6">
               <div>
                 <label className="block text-gray-700 mb-2" htmlFor="name">Name</label>
                 <input
