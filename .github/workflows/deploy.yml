@@ -30,9 +30,7 @@ jobs:
       - name: Build App
         run: |
           npm run build
-          touch out/.nojekyll    # Creates .nojekyll in the out directory
-          mkdir -p out/handymankarim
-          cp -r out/_next out/handymankarim/_next
+          touch out/.nojekyll
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.6.0
