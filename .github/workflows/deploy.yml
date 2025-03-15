@@ -30,15 +30,15 @@ jobs:
       - name: Build App
         run: |
           npm run build
-          touch out/.nojekyll
+          touch out/.nojekyll    # Creates .nojekyll in the out directory
           mkdir -p out/handymankarim
           cp -r out/_next out/handymankarim/_next
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.6.0
         with:
-          branch: gh-pages
-          folder: out
+          branch: gh-pages       # Deploys to gh-pages branch
+          folder: out           # Includes the .nojekyll file
           clean: true
           clean-exclude: |
             .nojekyll
