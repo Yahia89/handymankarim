@@ -1,6 +1,3 @@
-/**
- * @type {import('next').NextConfig}
- */
 const nextConfig = {
   output: 'export',
   images: {
@@ -8,8 +5,7 @@ const nextConfig = {
   },
   trailingSlash: true,
   basePath: '',
-  assetPrefix: '',
+  assetPrefix: './',
 };
-
 
 export default nextConfig;
