@@ -5,6 +5,7 @@ const nextConfig = {
   output: 'export',
   images: {
     unoptimized: true,
+    path: '/handymankarim'
   },
   trailingSlash: true,
   basePath: '/handymankarim',
