@@ -4,8 +4,7 @@ const nextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
-  basePath: 'https://handymankarim.com/',
-  assetPrefix: '',
+  // Remove basePath and assetPrefix for custom domain
 };
 
 export default nextConfig;
