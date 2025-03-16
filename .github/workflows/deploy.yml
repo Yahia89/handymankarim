@@ -25,6 +25,7 @@ jobs:
 
       - name: Build App
         run: |
+          rm -rf out
           npm run build
           touch out/.nojekyll
 

@@ -3,6 +3,5 @@ export default function imageLoader({
 }: {
   src: string
 }) {
-  const prefix = process.env.BASE_PATH || '';
-  return `${prefix}${src}`;
+  return src;
 }
