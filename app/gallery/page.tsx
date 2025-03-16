@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 };
 
 const galleryImages = Array.from({ length: 34 }, (_, i) => ({
-  src: `/assets/gallery/project-${i + 1}.jpg`,
+  src: `/handymankarim/assets/gallery/project-${i + 1}.jpg`,
   alt: `Project ${i + 1}`
 }));
 
