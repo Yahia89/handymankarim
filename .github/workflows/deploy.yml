@@ -23,6 +23,14 @@ jobs:
       - name: Installing packages
         run: npm ci
 
+      - name: Set build environment
+        run: |
+          if [ -f "out/CNAME" ]; then
+            echo "CUSTOM_DOMAIN=true" >> $GITHUB_ENV
+          else
+            echo "CUSTOM_DOMAIN=false" >> $GITHUB_ENV
+          fi
+
       - name: Build App
         run: |
           rm -rf out
