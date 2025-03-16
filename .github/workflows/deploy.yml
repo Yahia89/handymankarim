@@ -4,7 +4,6 @@ on:
   push:
     branches: [main]
 
-# Add permissions block
 permissions:
   contents: write
 
@@ -23,9 +22,6 @@ jobs:
 
       - name: Installing packages
         run: npm ci
-
-      - name: Extract repository name
-        run: echo "BASE_PATH=/handymankarim" >> $GITHUB_ENV
 
       - name: Build App
         run: |
