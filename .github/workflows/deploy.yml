@@ -25,7 +25,7 @@ jobs:
 
       - name: Set build environment
         run: |
-          if [ -f "out/CNAME" ]; then
+          if [ -f "public/CNAME" ]; then
             echo "CUSTOM_DOMAIN=true" >> $GITHUB_ENV
           else
             echo "CUSTOM_DOMAIN=false" >> $GITHUB_ENV
@@ -36,6 +36,11 @@ jobs:
           rm -rf out
           npm run build
           touch out/.nojekyll
+          if [ "$CUSTOM_DOMAIN" = "true" ]; then
+            mkdir -p out/_next
+            cp -r out/handymankarim/_next/* out/_next/
+            rm -rf out/handymankarim
+          fi
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.6.0
