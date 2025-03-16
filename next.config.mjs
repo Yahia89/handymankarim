@@ -4,8 +4,8 @@ const nextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
-  basePath: '',
-  assetPrefix: '/yahia/',
+  basePath: '/yahia',
+  assetPrefix: '',
 };
 
 export default nextConfig;
