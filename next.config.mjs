@@ -4,7 +4,7 @@ const nextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
-  basePath: '/yahia',
+  basePath: 'https://handymankarim.com/',
   assetPrefix: '',
 };
 
