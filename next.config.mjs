@@ -7,9 +7,6 @@ const nextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
-  // Remove basePath completely
-  assetPrefix: '',
-  basePath: '',
 };
 
 export default nextConfig;
