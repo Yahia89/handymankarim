@@ -9,6 +9,7 @@ const nextConfig = {
   trailingSlash: true,
   // Remove basePath completely
   assetPrefix: '',
+  basePath: 'handymankarim.com',
 };
 
 export default nextConfig;
