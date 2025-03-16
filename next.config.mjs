@@ -1,14 +1,15 @@
-const isCustomDomain = process.env.CUSTOM_DOMAIN === 'true';
-const repoName = 'handymankarim';
-
+/**
+ * @type {import('next').NextConfig}
+ */
 const nextConfig = {
   output: 'export',
   images: {
     unoptimized: true,
   },
   trailingSlash: true,
-  basePath: isCustomDomain ? '' : `/${repoName}`,
-  assetPrefix: isCustomDomain ? '' : `/${repoName}`,
+  // Remove basePath completely
+  assetPrefix: '',
+  basePath: '',
 };
 
 export default nextConfig;
