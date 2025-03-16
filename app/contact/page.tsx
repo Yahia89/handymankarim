@@ -33,6 +33,7 @@ export default function Contact() {
                 Kindest Regards,
               </p>
               <p className="font-semibold text-blue-900">
+                +1 (840) 588-7369
                 Karim
               </p>
             </div>
