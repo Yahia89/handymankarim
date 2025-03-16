@@ -5,7 +5,7 @@ const nextConfig = {
   },
   trailingSlash: true,
   basePath: '',
-  assetPrefix: '/handymankarim.com',
+  assetPrefix: '/handymankarim.com/',
 };
 
 export default nextConfig;
