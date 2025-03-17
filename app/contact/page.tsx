@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -7,12 +8,31 @@ export default function Contact() {
     email: '',
     message: ''
   });
+  const [status, setStatus] = useState({ type: '', message: '' });
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   // Add your form submission logic here
-  //   console.log('Form submitted:', formData);
-  // };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus({ type: 'loading', message: 'Sending...' });
+
+    try {
+      await emailjs.send(
+        'service_fj89d2i', // You'll get this from EmailJS
+        'template_ab1dv92', // You'll get this from EmailJS
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_email: 'karimsula1012@gmail.com',
+        },
+        'WyxltXypAyy7kwhOb' // You'll get this from EmailJS
+      );
+
+      setStatus({ type: 'success', message: 'Message sent successfully!' });
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      setStatus({ type: 'error', message: 'Failed to send message. Please try again.' });
+    }
+  };
 
   return (
     <main className="max-w-7xl mx-auto px-4 py-12">
@@ -40,7 +60,7 @@ export default function Contact() {
           </div>
           <div>
             <h2 className="text-2xl font-semibold mb-4">Get in Touch</h2>
-            <form className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="block text-gray-700 mb-2" htmlFor="name">Name</label>
                 <input
@@ -76,11 +96,21 @@ export default function Contact() {
                   onChange={(e) => setFormData({...formData, message: e.target.value})}
                 />
               </div>
+              {status.message && (
+                <div className={`p-4 rounded-lg ${
+                  status.type === 'success' ? 'bg-green-100 text-green-700' : 
+                  status.type === 'error' ? 'bg-red-100 text-red-700' :
+                  'bg-blue-100 text-blue-700'
+                }`}>
+                  {status.message}
+                </div>
+              )}
               <button
                 type="submit"
-                className="w-full bg-blue-900 text-white py-3 rounded-lg hover:bg-blue-800 transition-colors"
+                disabled={status.type === 'loading'}
+                className="w-full bg-blue-900 text-white py-3 rounded-lg hover:bg-blue-800 transition-colors disabled:opacity-50"
               >
-                Send Message
+                {status.type === 'loading' ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </div>
