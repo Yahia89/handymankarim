@@ -1,9 +1,3 @@
-# *
 User-agent: *
 Allow: /
-
-# Host
-Host: https://handymankarim.com
-
-# Sitemaps
 Sitemap: https://handymankarim.com/sitemap.xml
