@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && npm run generate-sitemap",
-    "generate-sitemap": "ts-node --project tsconfig.json scripts/generate-sitemap.ts",
+    "build": "next build",
     "deploy": "npm run build && touch out/.nojekyll && gh-pages -d out",
     "start": "next start",
     "lint": "next lint"
@@ -31,7 +30,6 @@
     "globby": "^14.1.0",
     "postcss": "^8.5.3",
     "tailwindcss": "^4.0.14",
-    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }
