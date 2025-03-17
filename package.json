@@ -2,11 +2,10 @@
   "name": "handymankarim-nextjs",
   "version": "0.1.0",
   "private": true,
-  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build && npm run generate-sitemap",
-    "generate-sitemap": "node --loader ts-node/esm scripts/generate-sitemap.ts",
+    "generate-sitemap": "ts-node --project tsconfig.json scripts/generate-sitemap.ts",
     "deploy": "npm run build && touch out/.nojekyll && gh-pages -d out",
     "start": "next start",
     "lint": "next lint"
