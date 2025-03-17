@@ -10,7 +10,7 @@ export default function Contact() {
   });
   const [status, setStatus] = useState({ type: '', message: '' });
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus({ type: 'loading', message: 'Sending...' });
 
