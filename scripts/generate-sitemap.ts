@@ -1,7 +1,8 @@
-import { writeFileSync } from 'fs';
+import { writeFileSync } from 'node:fs';
 import { globby } from 'globby';
 
-async function generate() {
+// Add type: "module" to package.json
+const generate = async () => {
   const pages = await globby([
     'app/**/*.tsx',
     '!app/**/_*.tsx',
@@ -31,6 +32,6 @@ async function generate() {
     </urlset>`;
 
   writeFileSync('public/sitemap.xml', sitemap);
-}
+};
 
 generate();
