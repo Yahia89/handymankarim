@@ -1,8 +1,4 @@
-export default function imageLoader({
-  src,
-}: {
-  src: string
-}) {
-  const prefix = process.env.BASE_PATH || '';
-  return `${prefix}${src}`;
+export default function imageLoader({ src }: { src: string }) {
+  const isGitHubPages = process.env.GITHUB_PAGES === 'true';
+  return isGitHubPages ? `/handymankarim${src}` : src;
 }

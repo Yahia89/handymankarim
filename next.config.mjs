@@ -5,6 +5,8 @@ const nextConfig = {
   output: 'export',
   images: {
     unoptimized: true,
+    loader: 'custom',
+    loaderFile: './image-loader.ts',
   },
   trailingSlash: true,
   basePath: isGitHubPages ? '/handymankarim' : '',
