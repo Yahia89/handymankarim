@@ -16,20 +16,21 @@ export default function Contact() {
 
     try {
       await emailjs.send(
-        'service_fj89d2i', // You'll get this from EmailJS
-        'template_ab1dv92', // You'll get this from EmailJS
+        'service_fj89d2i',
+        'template_ab1dv92',
         {
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message,
           to_email: 'karimsula1012@gmail.com',
         },
-        'WyxltXypAyy7kwhOb' // You'll get this from EmailJS
+        'WyxltXypAyy7kwhOb'
       );
 
       setStatus({ type: 'success', message: 'Message sent successfully!' });
       setFormData({ name: '', email: '', message: '' });
-    } catch (error) {
+    } catch (err: unknown) {
+      console.error('Failed to send email:', err);
       setStatus({ type: 'error', message: 'Failed to send message. Please try again.' });
     }
   };
