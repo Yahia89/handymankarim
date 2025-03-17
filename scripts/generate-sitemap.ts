@@ -1,27 +1,25 @@
-import { writeFileSync } from 'node:fs';
-import { globby } from 'globby';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-// Add type: "module" to package.json
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const generate = async () => {
-  const pages = await globby([
-    'app/**/*.tsx',
-    '!app/**/_*.tsx',
-    '!app/**/layout.tsx',
-    '!app/**/error.tsx',
-    '!app/**/loading.tsx',
-  ]);
+  const pagesDirectory = path.join(__dirname, '../app');
+  const pages = [
+    '/',
+    '/contact',
+    '/gallery'
+  ];
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       ${pages
         .map((page) => {
-          const path = page
-            .replace('app', '')
-            .replace('/page.tsx', '')
-            .replace('.tsx', '');
           return `
             <url>
-              <loc>https://handymankarim.com${path}</loc>
+              <loc>https://handymankarim.com${page}</loc>
               <lastmod>${new Date().toISOString()}</lastmod>
               <changefreq>monthly</changefreq>
               <priority>0.7</priority>
@@ -31,7 +29,7 @@ const generate = async () => {
         .join('')}
     </urlset>`;
 
-  writeFileSync('public/sitemap.xml', sitemap);
+  fs.writeFileSync(path.join(__dirname, '../public/sitemap.xml'), sitemap);
 };
 
 generate();
