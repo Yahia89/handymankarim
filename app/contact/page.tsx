@@ -1,37 +1,40 @@
-'use client';
-import { useState } from 'react';
-import emailjs from '@emailjs/browser';
+"use client";
+import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
-  const [status, setStatus] = useState({ type: '', message: '' });
+  const [status, setStatus] = useState({ type: "", message: "" });
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setStatus({ type: 'loading', message: 'Sending...' });
+    setStatus({ type: "loading", message: "Sending..." });
 
     try {
       await emailjs.send(
-        'service_fj89d2i',
-        'template_ab1dv92',
+        "service_fj89d2i",
+        "template_ab1dv92",
         {
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message,
-          to_email: 'karimsula1012@gmail.com',
+          to_email: "karimsula1012@gmail.com",
         },
-        'WyxltXypAyy7kwhOb'
+        "WyxltXypAyy7kwhOb"
       );
 
-      setStatus({ type: 'success', message: 'Message sent successfully!' });
-      setFormData({ name: '', email: '', message: '' });
+      setStatus({ type: "success", message: "Message sent successfully!" });
+      setFormData({ name: "", email: "", message: "" });
     } catch (err: unknown) {
-      console.error('Failed to send email:', err);
-      setStatus({ type: 'error', message: 'Failed to send message. Please try again.' });
+      console.error("Failed to send email:", err);
+      setStatus({
+        type: "error",
+        message: "Failed to send message. Please try again.",
+      });
     }
   };
 
@@ -39,29 +42,28 @@ export default function Contact() {
     <main className="max-w-7xl mx-auto px-4 py-12">
       <div className="max-w-2xl mx-auto">
         <h1 className="text-4xl font-bold text-center mb-12">Contact Us</h1>
-        
-        <div className="grid md:grid-cols-2 gap-12">
-        <div className="bg-gray-55 p-1 ">
-            <h2 className="text-2xl font-semibold mb-4 text-gray-900">Hello!</h2>
+
+        <div className="grid  gap-12">
+          <div className="bg-gray-55 p-1 ">
+            <h2 className="text-2xl font-semibold mb-4 text-gray-900">
+              Hello!
+            </h2>
             <div className="prose text-gray-800 space-y-4">
               <p className="text-gray-800">
                 Send me a general message with your contact info please.
               </p>
               <p className="text-gray-800">
-                You can tell me about your project or ask me to contact you back if you have questions.
+                You can tell me about your project or ask me to contact you back
+                if you have questions.
               </p>
-              <p className="pt-4 text-gray-800">
-                Kindest Regards,
-              </p>
-              <p className="font-semibold text-blue-900">
-                +1 (840) 588-7369
-                Karim
-              </p>
+              <p className="pt-4 text-gray-800">Kindest Regards,</p>
+              <p className="pt-4 text-gray-800">Call or even text</p>
+              <p className="font-semibold text-blue-900">+1 (840) 588-7369</p>
             </div>
           </div>
           <div>
-            <h2 className="text-2xl font-semibold mb-4">Get in Touch</h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            {/* <h2 className="text-2xl font-semibold mb-4">Get in Touch</h2> */}
+            {/* <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="block text-gray-700 mb-2" htmlFor="name">Name</label>
                 <input
@@ -113,7 +115,7 @@ export default function Contact() {
               >
                 {status.type === 'loading' ? 'Sending...' : 'Send Message'}
               </button>
-            </form>
+            </form> */}
           </div>
         </div>
       </div>
