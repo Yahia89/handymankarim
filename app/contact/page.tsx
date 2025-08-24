@@ -1,42 +1,42 @@
 "use client";
-import React, { useState } from "react";
-import emailjs from "@emailjs/browser";
+import React from "react";
+// import emailjs from "@emailjs/browser";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-  const [status, setStatus] = useState({ type: "", message: "" });
+  // const [formData, setFormData] = useState({
+  //   name: "",
+  //   email: "",
+  //   message: "",
+  // });
+  // const [ setStatus] = useState({ type: "", message: "" });
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setStatus({ type: "loading", message: "Sending..." });
+  // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+  //   setStatus({ type: "loading", message: "Sending..." });
 
-    try {
-      await emailjs.send(
-        "service_fj89d2i",
-        "template_ab1dv92",
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          message: formData.message,
-          to_email: "karimsula1012@gmail.com",
-        },
-        "WyxltXypAyy7kwhOb"
-      );
+  //   try {
+  //     await emailjs.send(
+  //       "service_fj89d2i",
+  //       "template_ab1dv92",
+  //       {
+  //         from_name: formData.name,
+  //         from_email: formData.email,
+  //         message: formData.message,
+  //         to_email: "karimsula1012@gmail.com",
+  //       },
+  //       "WyxltXypAyy7kwhOb"
+  //     );
 
-      setStatus({ type: "success", message: "Message sent successfully!" });
-      setFormData({ name: "", email: "", message: "" });
-    } catch (err: unknown) {
-      console.error("Failed to send email:", err);
-      setStatus({
-        type: "error",
-        message: "Failed to send message. Please try again.",
-      });
-    }
-  };
+  //     setStatus({ type: "success", message: "Message sent successfully!" });
+  //     setFormData({ name: "", email: "", message: "" });
+  //   } catch (err: unknown) {
+  //     console.error("Failed to send email:", err);
+  //     setStatus({
+  //       type: "error",
+  //       message: "Failed to send message. Please try again.",
+  //     });
+  //   }
+  // };
 
   return (
     <main className="max-w-7xl mx-auto px-4 py-12">
